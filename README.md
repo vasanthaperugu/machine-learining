@@ -42,7 +42,7 @@ Overall Test Accuracy: **82.82%**
 ## How to Run
 ```bash
 pip install tensorflow scikit-learn numpy matplotlib seaborn pandas jupyter
-jupyter notebook neural_networks_svm.ipynb
+jupyter notebook SVM_neural_networks.ipynb
 ```
 
 Dataset downloads automatically (~170MB).
