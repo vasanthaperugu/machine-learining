@@ -1,25 +1,54 @@
 SVM Neural networks
 
-Built and trained a convolutional neural network from scratch to classify images across 10 categories, reaching 82.82% test accuracy against a 75% baseline target. The project covers the full ML pipeline: data preprocessing, augmentation, model design, training with callbacks, and error analysis.
+# CNN Image Classification - CIFAR-10
 
-What the project does
+Image classification using a custom Convolutional Neural Network on the CIFAR-10 dataset, achieving 82.82% test accuracy.
 
-The notebook trains a CNN on the CIFAR-10 dataset 60,000 small color images (32×32 px) across 10 classes: airplane, automobile, bird, cat, deer, dog, frog, horse, ship, and truck. The dataset downloads automatically when you run the notebook - no manual setup needed.
-It goes through exploring the data and visualizing class distribution, preprocessing (normalization, one-hot encoding), building and training a CNN with data augmentation, evaluating with a confusion matrix and per-class F1 scores, and comparing different architectures to understand what worked and what didn't.
+![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange.svg)
+![Accuracy](https://img.shields.io/badge/Accuracy-82.82%25-success.svg)
 
-How the model works
+## Overview
 
-Data augmentation is applied during training to prevent overfitting. Each image gets randomly flipped, rotated, zoomed, shifted and contrast-adjusted on the fly so the model never sees the exact same image twice. Without this, accuracy stalled at 65% with clear overfitting. With it, the model hit 82.82%.
+Built a CNN from scratch to classify 60,000 images across 10 categories. Experimented with multiple architectures and used data augmentation to improve generalization.
 
-Architecture - 3 convolutional blocks, each following the same pattern:
-Conv2D -> BatchNormalization -> Conv2D -> BatchNormalization -> MaxPooling -> Dropout
-Filter sizes grow from 32 -> 64 -> 128 across the blocks, learning increasingly complex features. BatchNorm keeps training stable, Dropout prevents overfitting at each stage.
-Training used Adam (lr=0.001) with two callbacks: EarlyStopping monitors validation loss and restores the best weights, while ReduceLROnPlateau halves the learning rate whenever progress stalls. The model trained for 100 epochs, with the learning rate stepped down 7 times as it plateaued. Best weights came from epoch 96.
+**Result: 82.82% test accuracy**
 
-How to install and run
-Install dependencies:
-pip install tensorflow numpy matplotlib scikit-learn seaborn pandas
+## Dataset
 
-Run cells from top to bottom. No GPU required, though training will be slow on CPU.
+CIFAR-10 — 60,000 color images (32×32), 10 classes: airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck. Downloads automatically via TensorFlow.
+
+## Model Architecture
+
+3-block CNN with increasing filters (32 → 64 → 128), batch normalization, dropout, and data augmentation built into the model pipeline.
+
+## Results
+
+| Class | F1-Score |
+|-------|----------|
+| Automobile | 0.924 |
+| Ship | 0.910 |
+| Truck | 0.880 |
+| Cat | 0.705 (hardest) |
+
+Overall Test Accuracy: **82.82%**
+
+## Key Findings
+
+- Data augmentation improved accuracy from 65% to 82.82%
+- Frog class caused most misclassifications due to green color bias
+- 3-block architecture outperformed both simpler and deeper models
+
+## How to Run
+```bash
+pip install tensorflow scikit-learn numpy matplotlib seaborn pandas jupyter
+jupyter notebook neural_networks_svm.ipynb
+```
+
+Dataset downloads automatically (~170MB).
+
+## Technologies
+
+Python, TensorFlow, Keras, Scikit-learn, NumPy, Matplotlib, Seaborn
 
 Note: Dataset loaded in notebook.
