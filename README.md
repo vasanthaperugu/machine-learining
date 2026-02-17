@@ -1,4 +1,4 @@
-CIFAR-10 Image Classification — CNN vs SVM
+SVM Neural networks
 
 Built and trained a convolutional neural network from scratch to classify images across 10 categories, reaching 82.82% test accuracy against a 75% baseline target. The project covers the full ML pipeline: data preprocessing, augmentation, model design, training with callbacks, and error analysis.
 
