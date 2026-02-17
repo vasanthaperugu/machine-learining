@@ -16,7 +16,7 @@ Built a CNN from scratch to classify 60,000 images across 10 categories. Experim
 
 ## Dataset
 
-CIFAR-10 — 60,000 color images (32×32), 10 classes: airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck. Downloads automatically via TensorFlow.
+CIFAR-10 60,000 color images (32×32), 10 classes: airplane, automobile, bird, cat, deer, dog, frog, horse, ship, truck. Downloads automatically via TensorFlow.
 
 ## Model Architecture
 
@@ -51,4 +51,4 @@ Dataset downloads automatically (~170MB).
 
 Python, TensorFlow, Keras, Scikit-learn, NumPy, Matplotlib, Seaborn
 
-Note: Dataset loaded in notebook.
+Note: Dataset will load inside notebook.
